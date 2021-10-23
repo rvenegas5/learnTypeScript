@@ -45,6 +45,19 @@ diceRoll = 2; // Valid Value
 diceRoll = 3; // Valid Value
 // diceRoll = 7; Valid Value
 
+/* -------------------------- Collection types -------------------------*/
+
+// Arrays
+// First way
+let list: number[] = [1, 2, 3, 4, 5];
+// Second Way
+let listB: Array<number> = [1, 3, 5, 7];
+
+// Tuples
+let personA: [string, number, number] = ["William", 22, 099999999];
+let personB: [string, number] = ["Bodero", 21]; 
+
+
 
 
 
