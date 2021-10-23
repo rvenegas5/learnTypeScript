@@ -1,3 +1,4 @@
+// Union Types
 import { error } from "console";
 
 function add(x: number | string, y: number | string) {
@@ -12,6 +13,40 @@ function add(x: number | string, y: number | string) {
   throw error("You are mixing types of Typescript");
 }
 
-console.log(add(1, 2));
-console.log(add("one", "two"));
-//add(1, "two");
+// Intersection Types
+interface Employee {
+  employeeID: number;
+  age: number;
+}
+
+interface Manager {
+  stockPlan: boolean;
+}
+
+type ManagementEmployee = Employee & Manager;
+
+let newManager: ManagementEmployee = {
+  employeeID: 123,
+  age: 22,
+  stockPlan: true
+};
+
+// Defining Literal Types
+type testResult = "pass" | "fail" | "incomplete"; // Creating a new Type
+let myResult: testResult;
+myResult = "pass"; // Valid value
+myResult = "fail"; // Valid Value
+myResult = "incomplete"; // Valid Value
+// myResult = "ok"; invalid Value
+
+type dice = 1 | 2 | 3 | 4 | 5 | 6; // Creating a new Type with integers values
+let diceRoll: dice;
+diceRoll = 2; // Valid Value
+diceRoll = 3; // Valid Value
+// diceRoll = 7; Valid Value
+
+
+
+
+
+
